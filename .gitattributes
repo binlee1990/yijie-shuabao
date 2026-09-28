@@ -1,0 +1,13 @@
+* text=auto
+*.cs text eol=lf
+*.csproj text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.md text eol=lf
+*.sln text eol=crlf
+*.bat text eol=crlf
+*.sh text eol=lf
+*.svg text eol=lf
+*.woff2 binary
+*.otf binary
+*.wav binary

@@ -1,0 +1,11 @@
+.godot/
+**/bin/
+**/obj/
+.vs/
+.idea/
+Exports/
+*.user
+*.tmp
+*.save.json
+.DS_Store
+Assets/*.translation

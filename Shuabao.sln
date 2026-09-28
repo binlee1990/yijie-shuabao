@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuabao", "Shuabao.csproj", "{0BC6B063-448D-44D9-986A-111BEB4B6714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuabao.Core", "Core\Shuabao.Core.csproj", "{746D9BC7-F974-4909-9A29-2A3A4602242B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shuabao.Tests", "Tests\Shuabao.Tests.csproj", "{D0CF9E4C-B114-4021-B60E-6A4119E3F96F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BC6B063-448D-44D9-986A-111BEB4B6714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC6B063-448D-44D9-986A-111BEB4B6714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC6B063-448D-44D9-986A-111BEB4B6714}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC6B063-448D-44D9-986A-111BEB4B6714}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{746D9BC7-F974-4909-9A29-2A3A4602242B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746D9BC7-F974-4909-9A29-2A3A4602242B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746D9BC7-F974-4909-9A29-2A3A4602242B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746D9BC7-F974-4909-9A29-2A3A4602242B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CF9E4C-B114-4021-B60E-6A4119E3F96F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CF9E4C-B114-4021-B60E-6A4119E3F96F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CF9E4C-B114-4021-B60E-6A4119E3F96F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CF9E4C-B114-4021-B60E-6A4119E3F96F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

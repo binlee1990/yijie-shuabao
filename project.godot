@@ -1,0 +1,24 @@
+; Open using Godot 4.5 .NET, not the standard GDScript-only editor.
+config_version=5
+
+[application]
+config/name="异界刷宝录"
+run/main_scene="res://Game/Main.tscn"
+config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
+config/icon="res://Assets/ui/icons/sect.svg"
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1440
+window/size/window_height_override=900
+window/size/resizable=true
+window/stretch/mode="canvas_items"
+
+[dotnet]
+project/assembly_name="Shuabao"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.063, 0.106, 0.125, 1)

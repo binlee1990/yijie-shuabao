@@ -1,0 +1,39 @@
+name: Godot CSharp validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build native project
+        run: dotnet build Shuabao.csproj --configuration Debug
+      - name: Rules and full playthrough
+        run: dotnet run --project Tests/Shuabao.Tests.csproj -- --playthrough
+      - name: Install tested Godot .NET version
+        shell: bash
+        run: |
+          curl --fail --location --retry 3 https://github.com/godotengine/godot-builds/releases/download/4.5-stable/Godot_v4.5-stable_mono_linux_x86_64.zip -o "$RUNNER_TEMP/godot.zip"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          echo "GODOT_NET=$RUNNER_TEMP/godot/Godot_v4.5-stable_mono_linux_x86_64/Godot_v4.5-stable_mono_linux.x86_64" >> "$GITHUB_ENV"
+      - name: Import and run Godot smoke test
+        shell: bash
+        run: |
+          "$GODOT_NET" --headless --path . --editor --import > Docs/QA/ci-import.log 2>&1
+          "$GODOT_NET" --headless --path . -- --smoke-test > Docs/QA/ci-smoke.log 2>&1
+          cat Docs/QA/ci-smoke.log
+          if grep -E 'ERROR:|FAIL' Docs/QA/ci-import.log Docs/QA/ci-smoke.log; then exit 1; fi
+          grep -q 'SHUABAO_GODOT_SMOKE_PASS' Docs/QA/ci-smoke.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-reports
+          path: Docs/QA/
